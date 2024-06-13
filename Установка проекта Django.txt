@@ -1,0 +1,39 @@
+Создаем папку под названием demo3 через pycharm
+
+После создания виртуальной среды и ее активации устанавливаем джанго
+Переходим в Command Promt в Терминале Django
+python -m pip install Django
+
+Создание проекта - демо
+django-admin startproject demo
+
+Старт сервера Django
+python manage.py runserver
+
+Создание приложения Django
+python manage.py startapp demo2
+
+в settings.py Подключаем наше приложение
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'demo2',
+]
+
+так же подключаем базу данных в settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shop',
+        'USER': 'postgres',
+        # Не забываем здесь указать пароль доступа , например 123
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}

@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\base.css'%}">
+</head>
+<body>
+<header class="header">
+</header>
+<main>
+    <div class="okno">
+        <h1>Работа с заказами клиентов</h1>
+        <div class="viborklienta">
+            <form action="/client/" method="post">Выбери клиента:
+            {% csrf_token %}
+              <select name="client">
+                              {% for client in pr %}
+                                    <option class="" value="{{ client.klient }}">{{ client.klient }}</option>
+                              {% endfor %}
+              </select>
+              <input class="filtrovat" value="Фильтровать" type="submit"/>
+            </form>
+            <form action="/">
+                <input type="submit" value="Показать всё" />
+            </form>
+        </div>
+
+        <div class="poisk">
+        <form method="post" action="/search/">
+            {% csrf_token %}
+            <p>Введите строку поиска:<input name="stroka">
+            <button type="submit" value="Найти">Найти</button>
+            </p>
+        </form>
+        </div>
+
+        <div class="sortirovka">Выберите поле для сортировки
+        </div>
+        <div class="sortirovka2">
+            <form method="post" action="/sort/">
+                {% csrf_token %}
+            <select class="poledlyasortirovki" name="pole" multiple>
+              <option value="klient">Клиент</option>
+              <option value="created">Дата заказа</option>
+              <option value="status">Статус заказа</option>
+            </select>
+
+            <div class="galochki">
+                  <label class="vozvrastanie" name="ss12" >
+                    <input id="4" type="checkbox" name="valuee" value="1">
+                      <p>По возрастанию</p>
+                  </label>
+                  <label class="ybivanie" name="ss13">
+                    <input id="5" type="checkbox" name="valuee" value="0">
+                    <p>По убыванию</p>
+                  </label>
+            </div>
+                <button type="submit" >Сортировать</button>
+            </form>
+        </div>
+
+        <div style="font-size: 20px; color: red">{{ stroka }}</div>
+        <table>
+          <tr>
+            <th>Клиент</th>
+            <th>Телефон</th>
+            <th>Электронная почта</th>
+            <th>Дата заказа</th>
+            <th>Статус заказа</th>
+          </tr>
+            {% for client in pr %}
+          <tr>
+            <td>{{ client.klient }}</td>
+            <td>{{ client.number }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.created }}</td>
+            <td>{{ client.status }}</td>
+          </tr>
+            {% endfor %}
+        </table>
+    </div>
+</main>
+<footer></footer>
+<!-- <script src="{% static 'js\basket.js' %}"></script> -->
+</body>
+</html>

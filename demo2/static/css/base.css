@@ -1,0 +1,154 @@
+.okno {
+    width: 44%;
+    min-width: 536px;
+    border: 3.5px solid #9f9f9f;
+    margin: auto;
+    margin-top: 100px;
+}
+
+h1{
+    margin: 0px;
+    font-size: 20px;
+    width: auto;
+    border-bottom: 1.5px solid black;
+    background-color: #dddfdf;
+    text-align: center;
+}
+
+
+.viborklienta {
+    display: flex;
+    width: 491px;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 15px;
+    justify-content: space-between;
+}
+
+input, select {
+    width: 114px;
+    height: 30px;
+    font-size: 16px;
+}
+
+form{
+    font-size: 18px;
+}
+
+p,select{
+    margin:0px;
+    font-size: 18px;
+}
+
+.poisk {
+    display: flex;
+    width: 450px;
+    height: 33px;
+    padding-left: 15px;
+    justify-content: space-between;
+}
+
+.sortirovka {
+    display: flex;
+    float: right;
+    margin-right: 52px;
+    margin-top: -60px;
+    font-size: 18px;
+    flex-direction: column;
+}
+
+.sortirovka2 {
+    float: right;
+    margin-right: 0px;
+    margin-top: -30px;
+    font-size: 18px;
+}
+
+.sortirovka2 form {
+    display: flex;
+    width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.galochki input {
+    width: 25px;
+    font-size: 25px;
+}
+
+
+.galochki {
+    display: flex;
+    flex-direction: column;
+}
+
+.poledlyasortirovki {
+    height: 70px;
+    width: 140px;
+}
+
+.vozvrastanie, .ybivanie {
+    display: flex;
+}
+
+.vozvrastanie p, .ybivanie p {
+    margin-top: 5px;
+}
+
+.submitgalochki {
+    width: 151px;
+    height: 35px;
+    font-size: 22px;
+}
+
+button {
+width: 150px;
+    font-size: 19px;
+}
+
+th {
+    background-color: #dddfdf;
+}
+
+td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+}
+
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin-top: 120px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width:0px ) and (max-width:1855px){
+    .sortirovka {
+    display: flex;
+    float: left;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-left: 15px;
+}
+
+.sortirovka2 {
+    float: left;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-size: 18px;
+}
+}
+
+@media (max-width:1700px){
+table {
+    margin-left: 0px;
+}
+}
